@@ -31,6 +31,7 @@ dependencies:
     sdk: flutter
   get: ^4.6.5
   font_awesome_flutter: ^10.2.1
+  localstore: ^1.2.3
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -62,6 +63,8 @@ flutter:
   assets:
     - assets/images/home-icon-silhouette.png
     - assets/images/logo_guide.png
+    - assets/images/chart_menu.png
+    - assets/images/tabela_menu.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

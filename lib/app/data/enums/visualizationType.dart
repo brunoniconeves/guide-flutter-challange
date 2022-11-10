@@ -1,0 +1,4 @@
+enum VisualizationType {
+  chart,
+  table,
+}

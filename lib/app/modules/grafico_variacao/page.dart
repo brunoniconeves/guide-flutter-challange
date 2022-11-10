@@ -14,15 +14,12 @@ class Home extends StatelessWidget {
       builder: (_) {
         return Scaffold (
           appBar: AppBar(
-            title: Text(Get.find<Controller>().titulo),
+            title: Text('Get.find<Controller>().titulo'),
           ),
           body: Center(
-            child: GestureDetector(
-              child: Text(
-                'Valor: ${_.valor}',
-                style: const TextStyle(fontSize: 30),
-              ),
-              onTap: () => controller.incrementaValor(),
+            child: Text(
+              'Valor: teste',
+              style: const TextStyle(fontSize: 30),
             ),
           ),
         );

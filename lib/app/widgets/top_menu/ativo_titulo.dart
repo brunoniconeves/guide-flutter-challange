@@ -1,4 +1,3 @@
-import 'package:app/app/modules/home/widgets/buscar_ativo.dart';
 import 'package:app/core/values/colors.dart';
 import 'package:app/core/values/menu_constants.dart';
 import 'package:flutter/material.dart';
