@@ -1,15 +1,18 @@
+import 'package:app/app/data/enums/visualizationType.dart';
+import 'package:app/app/modules/grafico_variacao/page.dart';
 import 'package:app/core/values/menu_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:app/app/globalController.dart';
+
 
 class BuscarAtivo extends StatelessWidget {
+
   TextEditingController _controller = TextEditingController();
 
-  BuscarAtivo({
-    Key? key,
-  }) : super(key: key);
-
   @override
+
+
   Widget build(BuildContext context) {
     return Container(
         margin: EdgeInsets.only(left: 8),
@@ -51,8 +54,8 @@ class BuscarAtivo extends StatelessWidget {
               height: 30.0,
             ),
             ElevatedButton(
-              onPressed: () {                
-                  Get.back();
+              onPressed: () {
+                  Get.toNamed('/graficoVariacao', parameters: {'codigoAtivo': _controller.text});
               },
               style: ElevatedButton.styleFrom(
                 primary: Colors.redAccent,

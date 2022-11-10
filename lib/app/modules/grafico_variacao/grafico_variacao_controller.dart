@@ -6,7 +6,6 @@ class GraficoVariacaoController extends GetxController with StateMixin {
 
   GraficoVariacaoController(this._companyRepository);
 
-  String symbol = 'PETR4';
 
   @override
   onInit(){
@@ -15,11 +14,11 @@ class GraficoVariacaoController extends GetxController with StateMixin {
     if(Get.parameters['codigoAtivo'] != null) {
       _symbol = Get.parameters['codigoAtivo'].toString();
     }
-    getCompanyInfo(_symbol);
+    //getCompanyInfo(_symbol);
     getCompanyPriceHistory(_symbol);
   }
 
-  Future<void> getCompanyInfo(String symbol) async {
+  /*Future<void> getCompanyInfo(String symbol) async {
     change([], status: RxStatus.loading());
     try{
       final data = await _companyRepository.getCompanyInfo(symbol);
@@ -28,7 +27,7 @@ class GraficoVariacaoController extends GetxController with StateMixin {
       print(e);
       change([], status: RxStatus.error('Erro ao buscar dados da empresa'));
     }
-  }
+  }*/
 
   Future<void> getCompanyPriceHistory(String symbol) async {
     change([], status: RxStatus.loading());

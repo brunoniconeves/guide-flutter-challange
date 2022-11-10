@@ -1,4 +1,5 @@
 import 'package:app/app/modules/home/page.dart';
+import 'package:app/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -12,7 +13,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp (
-      home: Home()      
+      initialRoute: '/home',
+      getPages: appRoutes(),
     );
   }
 }

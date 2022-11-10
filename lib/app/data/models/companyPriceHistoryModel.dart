@@ -1,8 +1,7 @@
-class ComapanyModel {
-  int id;
-  String symbol;
-  String friendlyName;
-  String type;
-  String currency;
-  String companyLogo;
+import 'companyPrice.dart';
+
+class CompanyPriceHistoryModel {
+  List<CompanyPrice> companyHistoryPrice;
+
+  CompanyPriceHistoryModel(this.companyHistoryPrice);
 }
