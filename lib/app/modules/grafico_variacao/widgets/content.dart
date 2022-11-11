@@ -45,6 +45,15 @@ class Content extends StatelessWidget {
                           fontSize: 20,
                         ),
                       ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        'Gire o telefone para uma melhor visualização.',
+                        style: TextStyle(
+                          fontSize: 18,
+                        ),
+                      ),
                       SizedBox(height: 50,),
                       Container(
                           margin: EdgeInsets.all(10),

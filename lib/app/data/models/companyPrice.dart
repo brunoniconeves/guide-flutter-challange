@@ -4,6 +4,7 @@ import 'dart:convert';
 class CompanyPrice {
   int id;
   int companyId;
+  String companyLogo;
   int date;
   double openPrice;
   double d1VariationPercentage;
@@ -12,6 +13,7 @@ class CompanyPrice {
   CompanyPrice(
     this.id,
     this.companyId,
+    this.companyLogo,
     this.date,
     this.openPrice,
     this.d1VariationPercentage,
@@ -22,6 +24,7 @@ class CompanyPrice {
     return <String, dynamic>{
       'id': id,
       'companyId': companyId,
+      'companyLogo': companyLogo,
       'date': date,
       'openPrice': openPrice,
       'd1VariationPercentage': d1VariationPercentage,
@@ -37,6 +40,7 @@ class CompanyPrice {
     return CompanyPrice(
       map['id'] as int,
       map['companyId'] as int,
+      map['companyLogo'] as String,
       map['date'] as int,
       _openPrice as double,
       _d1VariationPercentage as double,

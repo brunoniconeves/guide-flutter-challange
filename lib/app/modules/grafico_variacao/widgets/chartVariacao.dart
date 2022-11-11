@@ -1,8 +1,12 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import '../../../data/models/LineTitles.dart';
 import '../../../data/models/pricePoint.dart';
 import 'dart:math';
+
+String moneySymbol = "R\$";
+var _formatMoney = new NumberFormat.currency(locale: "pt_BR", symbol: moneySymbol);
 
 class ChartVariacao extends StatelessWidget {
   final dynamic _state;
@@ -40,8 +44,8 @@ class ChartVariacao extends StatelessWidget {
           ),
           minX: 0,
           maxX: (_pricePoints.length - 1).toDouble(),
-          minY: minPrice,
-          maxY: double.parse((((maxPrice/5)+1).round()).toStringAsFixed(2))*5 as double,
+          minY: minPrice -2 as double,
+          maxY: maxPrice + 3 as double,
           lineBarsData: [
             LineChartBarData(
               spots: _pricePoints.map((point) => FlSpot(point.x, point.y)).toList(),
@@ -63,13 +67,26 @@ class ChartVariacao extends StatelessWidget {
                   end: Alignment.bottomLeft,
                   colors: gradientColors.map((color) => color.withOpacity(0.3)).toList(),
                 )
-              )
+              ),
             ),
           ],
           borderData: FlBorderData(
             show: false,
           ),
           titlesData: LineTitles.getTitleData(),
+          lineTouchData: LineTouchData(
+            enabled: true,
+            touchTooltipData: LineTouchTooltipData(
+              getTooltipItems: (value) {
+                return value
+                    .map((e) => LineTooltipItem(
+                    "${'Preço:'} ${_formatMoney.format(e.y)} \n",
+                    TextStyle(fontSize: 14)))
+                    .toList();
+              },
+              tooltipBgColor: Colors.white,
+            )
+          ),
         )
       ),
     );

@@ -21,7 +21,7 @@ class BuscarAtivo extends StatelessWidget {
         padding: const EdgeInsets.all(0),
         child: GestureDetector(
           onTap: () => {
-            Get.toNamed('/home')
+            Get.back()
           },
           child: Container(
             decoration: const BoxDecoration(

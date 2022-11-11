@@ -8,9 +8,15 @@ class GraficoVariacaoController extends GetxController with StateMixin {
 
   GraficoVariacaoController(this._companyRepository);
   String? symbol = Get.parameters['codigoAtivo'];
+  String companyLogo = "";
 
   void changeSymbol(String _symbol){
     symbol = _symbol;
+    update();
+  }
+
+  void changeCompanyLogo(String _companyLogo){
+    companyLogo = _companyLogo;
     update();
   }
 
@@ -19,6 +25,11 @@ class GraficoVariacaoController extends GetxController with StateMixin {
   onInit(){
     super.onInit();
     getCompanyPriceHistory();
+  }
+
+  @override
+  dispose(){
+    symbol = "";
   }
 
   @override
@@ -46,6 +57,7 @@ class GraficoVariacaoController extends GetxController with StateMixin {
     change([], status: RxStatus.loading());
     try{
       final data = await _companyRepository.getCompanyPriceHistory(symbol.toString());
+      changeCompanyLogo(data.first.companyLogo);
       change(data, status: RxStatus.success());
     } catch (e){
       print(e);

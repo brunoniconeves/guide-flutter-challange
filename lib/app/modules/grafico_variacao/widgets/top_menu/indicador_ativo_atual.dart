@@ -2,6 +2,9 @@
 import 'package:app/app/modules/grafico_variacao/widgets/top_menu/buscar_ativo.dart';
 import 'package:app/core/values/menu_constants.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/src/simple/get_state.dart';
+
+import '../../grafico_variacao_controller.dart';
 
 class IndicadorAtivoAtual extends StatelessWidget {
   const IndicadorAtivoAtual({
@@ -20,11 +23,15 @@ class IndicadorAtivoAtual extends StatelessWidget {
           child: CircleAvatar(
             backgroundColor: Colors.white,
             child: ClipOval(
-              child: Image.asset(
-                'assets/images/logo_guide.png',
-                fit: BoxFit.cover,
-                width: 80,
-                height: 80,
+              child: GetBuilder<GraficoVariacaoController>(
+                builder: (controller){
+                  return Image.network(
+                    controller.state.first.companyLogo,
+                    fit: BoxFit.cover,
+                    width: 80,
+                    height: 80,
+                  );
+                },
               ),
             ),
           ),        
