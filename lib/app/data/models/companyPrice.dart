@@ -47,4 +47,5 @@ class CompanyPrice {
   String toJson() => json.encode(toMap());
 
   factory CompanyPrice.fromJson(String source) => CompanyPrice.fromMap(json.decode(source) as Map<String, dynamic>);
+
 }

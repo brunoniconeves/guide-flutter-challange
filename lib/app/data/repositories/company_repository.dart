@@ -6,7 +6,7 @@ import 'i_company_repository.dart';
 
 class CompanyRepository implements ICompanyRepository {
   final Dio _dio;
-  final String baseUrl = "https://627c-177-205-35-33.ngrok.io/guide/company";
+  final String baseUrl = "https://192.168.68.110:5000/guide/company";
 
   CompanyRepository(this._dio);
 
