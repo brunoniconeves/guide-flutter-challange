@@ -8,9 +8,10 @@ Como o teste finalizava as 16h eu interrompi o trabalho na branch principal para
 ![Splash screen feita sem plugin](https://raw.githubusercontent.com/brunoniconeves/guide-challange/main/2.png)
 ![Tela inicial com seletor do modo de visualização](https://raw.githubusercontent.com/brunoniconeves/guide-challange/main/3.png)
 ![Busca pelo ticker do ativo](https://raw.githubusercontent.com/brunoniconeves/guide-challange/main/4.png)
+![Visualização tabular da variação de preço](https://raw.githubusercontent.com/brunoniconeves/guide-challange/main/7.png)
 ![Visualização de variação de preço em gráfico para PETR4](https://raw.githubusercontent.com/brunoniconeves/guide-challange/main/5.png)
 ![No modo horizontal para melhor ver o gráfico](https://raw.githubusercontent.com/brunoniconeves/guide-challange/main/6.png)
-![Visualização tabular da variação de preço](https://raw.githubusercontent.com/brunoniconeves/guide-challange/main/7.png)
+
 
 # Frontend FLUTTER
 Repositório do frontend desenvolvido em Flutter.
