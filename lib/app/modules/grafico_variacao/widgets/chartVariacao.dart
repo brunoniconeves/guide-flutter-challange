@@ -41,20 +41,28 @@ class ChartVariacao extends StatelessWidget {
           minX: 0,
           maxX: (_pricePoints.length - 1).toDouble(),
           minY: minPrice,
-          maxY: maxPrice as double,
+          maxY: double.parse((((maxPrice/5)+1).round()).toStringAsFixed(2))*5 as double,
           lineBarsData: [
             LineChartBarData(
               spots: _pricePoints.map((point) => FlSpot(point.x, point.y)).toList(),
               isCurved: false,
               dotData: FlDotData(show: false),
               barWidth: 5,
-              gradient: LinearGradient(
+              gradient: const LinearGradient(
                 begin: Alignment.topRight,
                 end: Alignment.bottomLeft,
                 colors: [
-                  const Color(0xff23b6e6),
-                  const Color(0xff02d39a),
+                  Color(0xff23b6e6),
+                  Color(0xff02d39a),
                 ],
+              ),
+              belowBarData: BarAreaData(
+                show: true,
+                gradient: LinearGradient(
+                  begin: Alignment.topRight,
+                  end: Alignment.bottomLeft,
+                  colors: gradientColors.map((color) => color.withOpacity(0.3)).toList(),
+                )
               )
             ),
           ],

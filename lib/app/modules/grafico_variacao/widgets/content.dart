@@ -31,17 +31,35 @@ class Content extends StatelessWidget {
           },
         )
             :
-        Center(
-            child: Container(
-              margin: EdgeInsets.all(10),
-              padding: EdgeInsets.all(10),
-              decoration: const BoxDecoration(
-                color: Color(0xffeaeaea),
-                borderRadius: BorderRadius.all(Radius.circular(8))
-              ),
-                child: ChartVariacao(state)
-            )
-        ),
+        SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.only(left: 16, right: 16),
+            child: Center(
+                child: Column(
+                    children: [
+                      SizedBox(height: 50,),
+                      Text(
+                          'Grafico da cotação do ativo nos últimos 30 pregões.',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                        ),
+                      ),
+                      SizedBox(height: 50,),
+                      Container(
+                          margin: EdgeInsets.all(10),
+                          padding: EdgeInsets.only(top:30, left: 16, right: 32),
+                          decoration: const BoxDecoration(
+                              color: Color(0xffeaeaea),
+                              borderRadius: BorderRadius.all(Radius.circular(8))
+                          ),
+                          child: ChartVariacao(state)
+                      ),
+                    ]
+                )
+            ),
+          ),
+        )
       ),
     );
   }
