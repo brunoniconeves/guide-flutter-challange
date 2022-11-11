@@ -1,5 +1,7 @@
 // ignore_for_file: use_key_in_widget_constructors
 
+import 'package:app/app/data/enums/visualizationType.dart';
+import 'package:app/app/globalController.dart';
 import 'package:app/app/modules/grafico_variacao/grafico_variacao_controller.dart';
 import 'package:app/app/modules/grafico_variacao/widgets/card_variacao.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +16,7 @@ class GraficoVariacao extends GetView<GraficoVariacaoController> {
 
   @override
   Widget build(BuildContext context) {
+        final globalController = Get.put(GlobalController());
         return Scaffold (
           appBar: AppBar(
             title: Text('${Get.parameters['codigoAtivo']}')
@@ -24,13 +27,17 @@ class GraficoVariacao extends GetView<GraficoVariacaoController> {
                   padding: EdgeInsets.only(top: 20, bottom: 20),
                   child: Container(
                     width: MediaQuery.of(context).size.width * 1,
-                    child: ListView.builder(
+                    child:
+                    globalController.currentDataVisualizationType == VisualizationType.table ?
+                    ListView.builder(
                       itemCount: state.length,
                       itemBuilder: (_, index){
                         final CompanyPrice item = state[index];
                         return CardVariacao(item);
                       },
-                    ),
+                    )
+                    :
+                    Text('Implementar gráfico'),
                   ),
                 )
             );
